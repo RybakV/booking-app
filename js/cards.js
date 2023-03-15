@@ -2,13 +2,12 @@ let cardsParent = document.querySelector('#all-offer-cards');
 let cardTemplate = document.querySelector('#card');
 let cardPhotoTemplate = document.querySelector('#card-photo');
 
-
 const cardsFragment = new DocumentFragment();
 
-export function renderOffers(element){
-  element.forEach(e => {
-    let cardTemplateClone = cardTemplate.content.cloneNode(true);
+export function renderOffers(elements){
+  elements.forEach(e => {
 
+    const cardTemplateClone = cardTemplate.content.cloneNode(true);
     cardTemplateClone.querySelector('.popup__title').innerText = e.offer.title;
     cardTemplateClone.querySelector('.popup__text--address').innerText = `x:${e.offer.address.x} y:${e.offer.address.y}`;
     cardTemplateClone.querySelector('.popup__text--price').innerText = `${e.offer.price} UAH / day`;
@@ -40,7 +39,7 @@ export function renderOffers(element){
     cardTemplateClone.querySelector('.popup__avatar').setAttribute('src', e.avatarUrl);
 
     e.offer.photos.forEach(url => {
-      let cardPhotoTemplateClone = cardPhotoTemplate.content.cloneNode(true);
+      const cardPhotoTemplateClone = cardPhotoTemplate.content.cloneNode(true);
       cardPhotoTemplateClone.querySelector('.popup__photo').setAttribute('src', url);
       cardTemplateClone.querySelector('.popup__photos').append(cardPhotoTemplateClone);
     });

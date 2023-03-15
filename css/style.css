@@ -1,4 +1,4 @@
-/* Общие стили. Каркас
+/* Загальні стилі
    ========================================================================== */
 
 @font-face {
@@ -42,11 +42,11 @@ body {
   min-width: 1000px;
   margin: 0 auto;
 
-  color: #353535;
+  color: #211f20;
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
 
-  background-color: #f0f0ea;
+  background-color: #ededed;
 }
 
 fieldset {
@@ -57,12 +57,20 @@ fieldset {
 }
 
 
-/* Карта с объявлениями
+/* Карта з оголошеннями
    ========================================================================== */
-
+.promo__title {
+  margin: -2px 0 0;
+  font-size: 15px;
+  color: #7e7e87;
+  width: 168px;
+  padding-left: 48px;
+  letter-spacing: 0.08em;
+}
 .promo {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding-top: 30px;
   padding-bottom: 20px;
 }
@@ -80,6 +88,7 @@ fieldset {
       -ms-flex-direction: column;
           flex-direction: column;
 
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -91,12 +100,13 @@ fieldset {
 
 
 /**
- * Фильтры объявления
+ * Фільтри оголошень
  */
 
 .map__filters-container {
   width: 100%;
-  background-color: #000000;
+  background-color: #006fd5;
+
 }
 
 .map__filters {
@@ -134,6 +144,7 @@ fieldset {
   cursor: pointer;
 
   border: 1px solid transparent;
+  border-radius: 3px;
 }
 
 .map__filter:hover {
@@ -238,12 +249,14 @@ fieldset {
 }
 
 
-/* Форма для публикации объявления
+/* Форма для публікації оголошення
    ========================================================================== */
 
 .notice {
-  margin: 0 120px;
-  padding: 30px 0;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 6px;
 }
 
 .notice__title {
@@ -584,7 +597,7 @@ fieldset {
 .ad-form__element--submit {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  padding: 40px 0;
+  margin-top: 24px;
 
   text-align: center;
 }
@@ -759,19 +772,31 @@ fieldset {
 }
 
 
-/* Вспомогательные экраны
+/* Допоміжні екрани
    ========================================================================== */
 
 /**
- * Карточка объявления
+ * Картка оголошення
  */
-
+#all-offer-cards {
+  padding: 8px;
+  text-align: center;
+}
 .popup {
   position: relative;
 
   width: 250px;
 
   font-size: 12px;
+
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 16px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  margin: 8px;
 }
 
 .popup__avatar {
@@ -779,6 +804,7 @@ fieldset {
   margin-bottom: 10px;
   width: 35px;
   height: 35px;
+  border-radius: 4px;
 }
 
 .popup__close {
@@ -916,9 +942,8 @@ fieldset {
   border: 2px solid #ff5635;
 }
 
-
 /**
- * Сообщения об успешном и неуспешном создании объявления
+ * Повідомлення проуспіх/помилку створення оголошення
  */
 
 .success,
@@ -963,7 +988,7 @@ fieldset {
   width: 109px;
   height: 122px;
 
-  background-image: url("../img/muffin-white.svg");
+  background-image: url("../img/icon-white.svg");
   background-position: center;
   background-repeat: no-repeat;
 
@@ -973,7 +998,7 @@ fieldset {
 }
 
 .error__message::before {
-  background-image: url("../img/muffin-red.svg");
+  background-image: url("../img/icon-red.svg");
 }
 
 .error__button {

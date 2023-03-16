@@ -1,11 +1,8 @@
-import { offers } from './data.js';
-import { renderOffers } from "./cards.js";
-import { offerTypeListener, offerCheckinListener } from "./form.js";
 
-renderOffers(offers);
+import { offerTypeListener, offerCheckinListener } from "./form.js";
+import { renderMap } from "./map.js";
+
 offerTypeListener();
 offerCheckinListener();
 
-
-
-
+renderMap();

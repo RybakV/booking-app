@@ -1,34 +1,16 @@
-let cardsParent = document.querySelector('#all-offer-cards');
 let cardTemplate = document.querySelector('#card');
 let cardPhotoTemplate = document.querySelector('#card-photo');
 
-const cardsFragment = new DocumentFragment();
+export function renderOffer(e){
 
-export function renderOffers(elements){
-  elements.forEach(e => {
-
+    //const cardFragment = new DocumentFragment();
     const cardTemplateClone = cardTemplate.content.cloneNode(true);
-    cardTemplateClone.querySelector('.popup__title').innerText = e.offer.title;
+    cardTemplateClone.querySelector('.popup__title').innerText = e.id +  e.offer.title;
     cardTemplateClone.querySelector('.popup__text--address').innerText = `x:${e.offer.address.x} y:${e.offer.address.y}`;
     cardTemplateClone.querySelector('.popup__text--price').innerText = `${e.offer.price} UAH / day`;
+    cardTemplateClone.querySelector('.popup__type').innerText = e.offer.type.en;
 
-    const propertyTypeTag = cardTemplateClone.querySelector('.popup__type');
-    switch(e.offer.type){
-      case 'flat':
-        propertyTypeTag.innerText = 'Apartment';
-        break;
-      case 'bungalow':
-        propertyTypeTag.innerText = 'Bungalow';
-        break;
-      case 'house':
-        propertyTypeTag.innerText = 'House';
-        break;
-      case 'palace':
-        propertyTypeTag.innerText = 'Palace';
-        break;
-    }
-
-    cardTemplateClone.querySelector('.popup__text--capacity').innerText = `${e.offer.rooms} ${e.offer.rooms === 1 ? 'room' : 'rooms'} для ${e.offer.guests} ${e.offer.guests === 1 ? 'guest' : 'guests'}`;
+    cardTemplateClone.querySelector('.popup__text--capacity').innerText = `${e.offer.rooms} ${e.offer.rooms === 1 ? 'room' : 'rooms'} for ${e.offer.guests} ${e.offer.guests === 1 ? 'guest' : 'guests'}`;
     cardTemplateClone.querySelector('.popup__text--time').innerText = `Checkin after ${e.offer.checkin}, checkout before ${e.offer.checkout}`;
 
     e.offer.features.forEach(feature => {
@@ -44,11 +26,12 @@ export function renderOffers(elements){
       cardTemplateClone.querySelector('.popup__photos').append(cardPhotoTemplateClone);
     });
 
+    // cardFragment.append(cardTemplateClone);
+    // return cardTemplateClone;
 
-
-    cardsFragment.append(cardTemplateClone);
-  })
-  cardsParent.append(cardsFragment);
+  const temporaryTag = document.createElement('div');
+  temporaryTag.appendChild(cardTemplateClone);
+  return temporaryTag.innerHTML;
 }
 
 

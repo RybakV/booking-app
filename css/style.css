@@ -97,7 +97,9 @@ fieldset {
   height: 500px;
   background-color: #dddddd;
 }
-
+#map {
+  height: 500px;
+}
 
 /**
  * Фільтри оголошень
@@ -404,7 +406,10 @@ fieldset {
   -webkit-box-shadow: 0 0 2px 2px #ff6547;
           box-shadow: 0 0 2px 2px #ff6547;
 }
-
+.disabled {
+  pointer-events: none !important;
+  opacity: .4 !important;
+}
 .ad-form__element--time {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
@@ -788,10 +793,11 @@ fieldset {
 /**
  * Картка оголошення
  */
-#all-offer-cards {
-  padding: 8px;
-  text-align: center;
-}
+/*#all-offer-cards {*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*  justify-content: center;*/
+/*}*/
 .popup {
   position: relative;
 
@@ -799,14 +805,12 @@ fieldset {
 
   font-size: 12px;
 
-  background-color: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  padding: 16px;
-  display: inline-block;
-  text-align: left;
-  vertical-align: top;
-  margin: 8px;
+  /*background-color: #fff;*/
+  /*border-radius: 6px;*/
+  /*overflow: hidden;*/
+  /*padding: 16px;*/
+  /*vertical-align: top;*/
+  /*margin: 8px;*/
 }
 
 .popup__avatar {

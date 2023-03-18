@@ -1,4 +1,7 @@
 export const offerSettings = {
+  mapCenter: [35.6804334,139.7689218],
+  mapZoom: 13,
+  mapMaxZoom: 13,
   authorsNames: ['Ben','joe','Sam'],
   titles: ['Good apartment','Nice green house','Hotel room', 'Duplex for all', 'Be my guest', 'Party house', 'Small room for the rest', 'Grandmas penthouse'],
   quantity: 10,

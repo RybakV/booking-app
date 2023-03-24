@@ -97,7 +97,9 @@ fieldset {
   height: 500px;
   background-color: #dddddd;
 }
-
+#map {
+  height: 500px;
+}
 
 /**
  * Фільтри оголошень
@@ -316,7 +318,7 @@ fieldset {
   text-align: center;
 
   border-radius: 5px;
-  background-color: #dadada;
+  background-color: #ebeef3;
 }
 
 .ad-form__field {
@@ -404,7 +406,10 @@ fieldset {
   -webkit-box-shadow: 0 0 2px 2px #ff6547;
           box-shadow: 0 0 2px 2px #ff6547;
 }
-
+.disabled {
+  pointer-events: none !important;
+  opacity: .4 !important;
+}
 .ad-form__element--time {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
@@ -590,7 +595,11 @@ fieldset {
   width: 70px;
   height: 70px;
 
-  background-color: #e4e4de;
+  background-color: #ebeef3;
+  background-image: url("../img/icon-grey.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 44px;
   border-radius: 5px;
 }
 
@@ -612,14 +621,17 @@ fieldset {
   width: 206px;
   height: 60px;
 
-  background-color: white;
-  border: 4px solid #ffaa99;
-  border-radius: 8px;
+  background-color: #006fd5;
+  color: #fff;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 6px;
+  transition: .2s;
 }
 
 .ad-form__submit:hover,
 .ad-form__submit:focus {
-  border-color: #ff6d51;
+  background-color: #0186ff;
 }
 
 .ad-form__submit:focus {
@@ -638,14 +650,17 @@ fieldset {
   margin: 0;
   padding: 0;
 
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: underline;
 
   border: 0;
   background: none;
   cursor: pointer;
+  transition: .2s;
 }
-
+.ad-form__reset:hover {
+  color: #ff6d51;
+}
 .ad-form__reset:focus {
   outline: none;
   -webkit-box-shadow: 0 0 2px 2px #ff6547;
@@ -778,10 +793,11 @@ fieldset {
 /**
  * Картка оголошення
  */
-#all-offer-cards {
-  padding: 8px;
-  text-align: center;
-}
+/*#all-offer-cards {*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*  justify-content: center;*/
+/*}*/
 .popup {
   position: relative;
 
@@ -789,14 +805,12 @@ fieldset {
 
   font-size: 12px;
 
-  background-color: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  padding: 16px;
-  display: inline-block;
-  text-align: left;
-  vertical-align: top;
-  margin: 8px;
+  /*background-color: #fff;*/
+  /*border-radius: 6px;*/
+  /*overflow: hidden;*/
+  /*padding: 16px;*/
+  /*vertical-align: top;*/
+  /*margin: 8px;*/
 }
 
 .popup__avatar {

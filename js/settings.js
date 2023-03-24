@@ -1,8 +1,16 @@
 export const offerSettings = {
+  mapCenter: [35.6804334,139.7689218],
+  mapZoom: 13,
+  mapMaxZoom: 13,
   authorsNames: ['Ben','joe','Sam'],
   titles: ['Good apartment','Nice green house','Hotel room', 'Duplex for all', 'Be my guest', 'Party house', 'Small room for the rest', 'Grandmas penthouse'],
   quantity: 10,
-  offerType: ['palace', 'flat', 'house', 'bungalow'],
+  offerType: [
+      {name: 'palace',en: 'Palace', ua: 'Палац'},
+      {name: 'flat',en: 'Apartment', ua: 'Квартира'},
+      {name: 'house',en: 'House', ua: 'Будинок'},
+      {name: 'bungalow',en: 'Bungalow', ua: 'Бунгало'}
+  ],
   price: {
     min: 1000,
     max: 8000,

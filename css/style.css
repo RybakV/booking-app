@@ -666,6 +666,7 @@ fieldset {
 .popup__photo {
   margin-right: 5px;
   margin-bottom: 5px;
+  border-radius: 3px;
 }
 
 /** Повідомлення проуспіх/помилку створення оголошення */

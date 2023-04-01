@@ -84,7 +84,7 @@
           <legend class="ad-form-header__title">Yout photo (for the map)</legend>
           <div class="ad-form-header__upload">
             <div class="ad-form-header__preview">
-              <img src="./img/icon-grey.svg" alt="Profile picture" width="40" height="44">
+              <img src="./img/icon-grey.svg" id="avatar-preview" alt="Profile picture" width="70" height="70">
             </div>
             <div class="ad-form__field">
               <input type="file" id="avatar" name="avatar" class="ad-form-header__input visually-hidden">
@@ -179,7 +179,9 @@
               <input type="file" id="images" name="images" class="ad-form__input visually-hidden">
               <label for="images" class="ad-form__drop-zone">Upload<br>photo...</label>
             </div>
-            <div class="ad-form__photo"></div>
+            <div class="ad-form__photos">
+              <div class="ad-form__photo"></div>
+            </div>
           </div>
         </fieldset>
         <fieldset class="ad-form__element ad-form__element--submit">

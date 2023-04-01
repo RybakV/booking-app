@@ -94,7 +94,7 @@ export const offerSettings = {
     'Rent for few days only.',
     'Safe kids area is available on the territory.'
   ],
-  noPictureUrl: './img/avatars/default.png',
+  noPictureUrl: './img/icon-grey.svg',
   photos: ['http://o0.github.io/assets/images/tokyo/hotel1.jpg', 'http://o0.github.io/assets/images/tokyo/hotel2.jpg', 'http://o0.github.io/assets/images/tokyo/hotel3.jpg'],
   avatarsQuantity: {
     min: 1,

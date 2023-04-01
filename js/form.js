@@ -20,7 +20,8 @@ const featuresInputs = document.querySelectorAll('.ad-form__element.features .fe
 function resetFrom(){
   titleInput.value = '';
   photos = [];
-  avatarPreview.innerHTML = '';
+  avatarPreview.src = offerSettings.noPictureUrl;
+  photosPreview.innerHTML = '';
 }
 
 titleInput.addEventListener('change',validateTitle);

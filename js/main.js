@@ -3,7 +3,6 @@ import { renderMap, reloadMapMarkers } from "./map.js";
 import { filterOffers } from "./filter.js";
 
 const form = document.querySelector('.ad-form');
-
 offerTypeListener();
 offerCheckinListener();
 
@@ -22,7 +21,6 @@ async function sendOffer(event){
 
 // FILTERING
 const filtersForm = document.querySelector('.map__filters');
-
 filtersForm.addEventListener('change', listenFilterForm);
 function listenFilterForm(event){
   const filteredOffers = filterOffers(offers, event);

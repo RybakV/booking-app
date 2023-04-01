@@ -1,6 +1,7 @@
-import { offers } from './data.js';
 import { renderOffer } from "./cards.js";
 import { offerSettings } from "./settings.js";
+//import { offers } from './data.js';
+
 
 const formSection = document.querySelector('.notice');
 const addressInput = document.querySelector('#address');
@@ -30,10 +31,11 @@ function updateCoordinates(event){
   addressInput.value = `${event.target.getLatLng().lat} ${event.target.getLatLng().lng}`
 }
 
-export function renderMap(){
+let map;
+export function renderMap(offers){
   disableForm();
 
-  let map = L.map('map', {
+  map = L.map('map', {
     center: offerSettings.mapCenter,
     zoom: offerSettings.mapZoom,
   });
@@ -46,7 +48,12 @@ export function renderMap(){
   }).addTo(map);
 
   renderMainMarker(map);
-  renderMapOffers(map);
+  renderMapOffers(map, offers);
+  setDefaultLocation(offerSettings.mapCenter);
+}
+
+function setDefaultLocation(coordinatesArray){
+  addressInput.value = `${coordinatesArray[0]} ${coordinatesArray[1]}`
 }
 
 function renderMainMarker(map) {
@@ -54,13 +61,20 @@ function renderMainMarker(map) {
   mainMarker.bindPopup("Choose Location").openPopup();
   mainMarker.on('drag', updateCoordinates);
 }
-
-function renderMapOffers(map) {
+let allOffersLayer;
+function renderMapOffers(map, offers) {
   const mapMarkersData = [];
   for (let i = 0; i < offers.length; i++){
     let popupContent = renderOffer(offers[i]);
       mapMarkersData.push(L.marker([offers[i].location.x, offers[i].location.y], {icon: customMarkerIconSmall}).bindPopup(popupContent));
     }
-  L.featureGroup(mapMarkersData).addTo(map);
+  allOffersLayer = L.featureGroup(mapMarkersData).addTo(map);
+
 }
 
+export function reloadMapMarkers(offers){
+  if (map.hasLayer(allOffersLayer)) {
+    map.removeLayer(allOffersLayer);
+  }
+  renderMapOffers(map, offers);
+}

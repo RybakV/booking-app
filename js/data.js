@@ -4,10 +4,8 @@ import { getrandomNumber, getRandomArrayData, getLocation } from './utilites.js'
 export function GetOffer(i){
   this.id = i;
   this.author = offerSettings.authorsNames[getrandomNumber(0, offerSettings.authorsNames.length -1)];
-
   let avatarIndex = getrandomNumber(offerSettings.avatarsQuantity.min,offerSettings.avatarsQuantity.max);
   this.avatarUrl = `./img/avatars/user${avatarIndex<10 ? '0'+avatarIndex : avatarIndex}.png`;
-
   let location = getLocation();
   this.location = location;
   this.offer = {};

@@ -1,8 +1,5 @@
 import { renderOffer } from "./cards.js";
 import { offerSettings } from "./settings.js";
-//import { offers } from './data.js';
-
-
 const formSection = document.querySelector('.notice');
 const addressInput = document.querySelector('#address');
 
@@ -69,7 +66,6 @@ function renderMapOffers(map, offers) {
       mapMarkersData.push(L.marker([offers[i].location.x, offers[i].location.y], {icon: customMarkerIconSmall}).bindPopup(popupContent));
     }
   allOffersLayer = L.featureGroup(mapMarkersData).addTo(map);
-
 }
 
 export function reloadMapMarkers(offers){

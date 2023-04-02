@@ -31,10 +31,8 @@ function updateFilterSettings(inputTarget, inputName, inputValue) {
     case 'type':
     case 'rooms':
     case 'guests':
-      filterSettings[inputName] = inputValue;
-      break;
     case 'price':
-      filterSettings.price = inputValue;
+      filterSettings[inputName] = inputValue;
       break;
     case 'wifi':
     case 'dishwasher':
@@ -52,22 +50,16 @@ function updateFilterSettings(inputTarget, inputName, inputValue) {
   }
   console.log('filter settings: ',filterSettings);
 }
-
 export function filterOffers(offersArray, event){
   console.log('=================================');
   console.log('all offers: ', offersArray);
-
   const inputTarget = event.target;
   const inputName = inputTarget.getAttribute('id').split('-')[1];
   const inputValue = inputTarget.value;
-
   updateFilterSettings(inputTarget, inputName, inputValue);
-
   const offersArrayClone = JSON.parse(JSON.stringify(offersArray));
-
   const offersArrayFiltered = offersArrayClone.filter(getFilteredOffers);
   function getFilteredOffers(currentOffer){
-
     return (
       (filterSettings.type === 'any' || currentOffer.offer.type.name === filterSettings.type) &&
       (filterSettings.rooms === 'any' || currentOffer.offer.rooms === filterSettings.rooms) &&
@@ -85,4 +77,3 @@ export function filterOffers(offersArray, event){
   console.log('=================================');
   return offersArrayFiltered;
 }
-
